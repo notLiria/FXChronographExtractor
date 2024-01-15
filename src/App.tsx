@@ -1,14 +1,13 @@
 // <reference path="path/types.d.ts" />
-import FaSun from "./assests/images/FaSun.png";
+
 import "./App.css";
+import FPSExtractor from "./FpsExtractor";
 
 const App = () => {
   return (
-    <div>
-      <h3>react-typescript boilerplate!</h3>
-      <h5>testing lint stage!!</h5>
-
-      <img src={FaSun} alt="FaSun" />
+    <div id="app" className="app">
+      <h3>FX Chronograph Data Dump</h3>
+      <FPSExtractor />
     </div>
   );
 };
