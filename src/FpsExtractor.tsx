@@ -9,11 +9,15 @@ const FPSExtractor = () => {
   const [outputText, updateOutputText] = useState("");
 
   const updateInputText = (e: any) => {
-    const fpsVals = e.target.value.split("\n").map((line: string) => {
-      return line.split(",")[1];
-    });
+    const fpsVals = e.target.value
+      .split("\n")
+      .map((line: string) => {
+        return line.split(",")[1];
+      })
+      .join("\n")
+      .trim();
 
-    updateOutputText(fpsVals.join("\n"));
+    updateOutputText(fpsVals);
   };
   return (
     <div>
@@ -22,9 +26,10 @@ const FPSExtractor = () => {
           <TextField
             id="input"
             multiline
-            defaultValue="FPS Values"
+            placeholder="FPS Values"
             variant="standard"
             onChange={updateInputText}
+            rows={10}
             sx={{ width: "50%" }}
           />
           <TextField
@@ -32,6 +37,7 @@ const FPSExtractor = () => {
             multiline
             value={outputText}
             disabled
+            rows={10}
             sx={{ width: "50%" }}
           />
         </Stack>
