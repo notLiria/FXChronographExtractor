@@ -27,7 +27,7 @@ const FPSExtractor = () => {
             id="input"
             multiline
             placeholder="FPS Values"
-            variant="standard"
+            variant="outlined"
             onChange={updateInputText}
             rows={10}
             sx={{ width: "50%" }}
@@ -37,6 +37,7 @@ const FPSExtractor = () => {
             multiline
             value={outputText}
             disabled
+            variant="filled"
             rows={10}
             sx={{ width: "50%" }}
           />
